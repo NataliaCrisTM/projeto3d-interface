@@ -608,7 +608,14 @@
     <addaction name="actionColocar_Elipse"/>
     <addaction name="actionApagar_Elipse"/>
    </widget>
+   <widget class="QMenu" name="menuArquivo">
+    <property name="title">
+     <string>Arquivo</string>
+    </property>
+    <addaction name="actionSalvar"/>
+   </widget>
    <addaction name="menuAdicionar"/>
+   <addaction name="menuArquivo"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionColorcar_Voxel">
@@ -649,6 +656,11 @@
   <action name="actionApagar_Elipse">
    <property name="text">
     <string>Apagar Elipse</string>
+   </property>
+  </action>
+  <action name="actionSalvar">
+   <property name="text">
+    <string>Salvar</string>
    </property>
   </action>
  </widget>

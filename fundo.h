@@ -28,6 +28,7 @@ public:
     void setDimCubo(float x, float y, float z);
     void setRaioEsfera(int raio);
     void setRaioEllipsoid(int raiox, int raioy, int raioz);
+    void setPlano(int plano);
 signals:
 
 };

@@ -34,6 +34,30 @@ private slots:
 
     void on_actionApagar_Elipse_triggered();
 
+    void on_raio_x_slider_valueChanged(int value);
+
+    void on_raio_y_slider_valueChanged(int value);
+
+    void on_raio_z_slider_valueChanged(int value);
+
+    void on_raio_esfera_slider_valueChanged(int value);
+
+    void on_cor_r_slider_valueChanged(int value);
+
+    void on_cor_g_slider_valueChanged(int value);
+
+    void on_cor_b_slider_valueChanged(int value);
+
+    void on_cor_a_slider_valueChanged(int value);
+
+    void on_cubo_x_slider_valueChanged(int value);
+
+    void on_cubo_y_slider_valueChanged(int value);
+
+    void on_cubo_z_slider_valueChanged(int value);
+
+    void on_slider_plan_z_valueChanged(int value);
+
 private:
     Ui::MainWindow *ui;
 };

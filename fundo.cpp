@@ -155,3 +155,9 @@ void Fundo::setRaioEllipsoid(int raiox,int raioy,int raioz)
     this -> raioz = raioz;
 }
 
+void Fundo::setPlano(int plano)
+{
+    this-> plano = plano;
+    std::cout << "set plano to " << plano << "\n";
+}
+
