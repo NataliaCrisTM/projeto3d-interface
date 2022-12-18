@@ -161,3 +161,8 @@ void Fundo::setPlano(int plano)
     std::cout << "set plano to " << plano << "\n";
 }
 
+void Fundo::writeOFF(const char *filename)
+{
+    sculptor->writeOFF(filename);
+}
+

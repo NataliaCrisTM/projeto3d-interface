@@ -58,6 +58,8 @@ private slots:
 
     void on_slider_plan_z_valueChanged(int value);
 
+    void on_actionSalvar_triggered();
+
 private:
     Ui::MainWindow *ui;
 };

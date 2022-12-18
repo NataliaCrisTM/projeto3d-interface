@@ -1,9 +1,10 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include "Acao.h"
-#include "putvoxel.h"
 #include <cmath>
 #include <iostream>
+#include <QFileDialog>
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
@@ -24,7 +25,7 @@ void MainWindow::setDimensoes(int linhas, int colunas, int planos) {
   ui->cubo_y_slider->setMaximum(colunas);
   ui->cubo_z_slider->setMaximum(planos);
 
-  ui->slider_plan_z->setMaximum(planos);
+  ui->slider_plan_z->setMaximum(planos - 1);
   std::cout << "set dimensoes\n";
 }
 
@@ -103,77 +104,60 @@ void MainWindow::on_actionApagar_Elipse_triggered() {
   ui->fundo->setRaioEllipsoid(raiox, raioy, raioz);
 }
 
-void MainWindow::on_raio_x_slider_valueChanged(int value)
-{
-    ui->raio_x_label->setText(QString::number(value));
+void MainWindow::on_raio_x_slider_valueChanged(int value) {
+  ui->raio_x_label->setText(QString::number(value));
 }
 
-
-void MainWindow::on_raio_y_slider_valueChanged(int value)
-{
-    ui->raio_y_label->setText(QString::number(value));
+void MainWindow::on_raio_y_slider_valueChanged(int value) {
+  ui->raio_y_label->setText(QString::number(value));
 }
 
-
-
-void MainWindow::on_raio_z_slider_valueChanged(int value)
-{
-    ui->raio_z_label->setText(QString::number(value));
+void MainWindow::on_raio_z_slider_valueChanged(int value) {
+  ui->raio_z_label->setText(QString::number(value));
 }
 
-
-void MainWindow::on_raio_esfera_slider_valueChanged(int value)
-{
-    ui->raio_esfera_label->setText(QString::number(value));
+void MainWindow::on_raio_esfera_slider_valueChanged(int value) {
+  ui->raio_esfera_label->setText(QString::number(value));
 }
 
-
-void MainWindow::on_cor_r_slider_valueChanged(int value)
-{
-    ui->cor_r_label->setText(QString::number(value));
+void MainWindow::on_cor_r_slider_valueChanged(int value) {
+  ui->cor_r_label->setText(QString::number(value));
 }
 
-
-
-void MainWindow::on_cor_g_slider_valueChanged(int value)
-{
-    ui->cor_g_label->setText(QString::number(value));
+void MainWindow::on_cor_g_slider_valueChanged(int value) {
+  ui->cor_g_label->setText(QString::number(value));
 }
 
-
-void MainWindow::on_cor_b_slider_valueChanged(int value)
-{
-    ui->cor_b_label->setText(QString::number(value));
+void MainWindow::on_cor_b_slider_valueChanged(int value) {
+  ui->cor_b_label->setText(QString::number(value));
 }
 
-
-void MainWindow::on_cor_a_slider_valueChanged(int value)
-{
-    ui->cor_a_label->setText(QString::number(value));
+void MainWindow::on_cor_a_slider_valueChanged(int value) {
+  ui->cor_a_label->setText(QString::number(value));
 }
 
-
-void MainWindow::on_cubo_x_slider_valueChanged(int value)
-{
-    ui->cubo_x_label->setText(QString::number(value));
+void MainWindow::on_cubo_x_slider_valueChanged(int value) {
+  ui->cubo_x_label->setText(QString::number(value));
 }
 
-
-
-void MainWindow::on_cubo_y_slider_valueChanged(int value)
-{
-    ui -> cubo_y_label->setText(QString::number(value));
+void MainWindow::on_cubo_y_slider_valueChanged(int value) {
+  ui->cubo_y_label->setText(QString::number(value));
 }
 
-
-void MainWindow::on_cubo_z_slider_valueChanged(int value)
-{
-    ui -> cubo_z_label->setText(QString::number(value));
+void MainWindow::on_cubo_z_slider_valueChanged(int value) {
+  ui->cubo_z_label->setText(QString::number(value));
 }
 
-void MainWindow::on_slider_plan_z_valueChanged(int value)
+void MainWindow::on_slider_plan_z_valueChanged(int value) {
+  ui->dim_plan_z->setText(QString::number(value));
+  ui->fundo->setPlano(value);
+  ui->fundo->repaint();
+}
+
+void MainWindow::on_actionSalvar_triggered()
 {
-    ui->dim_plan_z->setText(QString::number(value));
-    ui->fundo->setPlano(value);
+    QString fileName = QFileDialog::getSaveFileName(this, "Salvar arquivo off", QString(), "Arquivo off (*.off)");
+
+    ui->fundo->writeOFF(fileName.toStdString().c_str());
 }
 

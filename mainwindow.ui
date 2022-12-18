@@ -592,7 +592,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>25</height>
+     <height>19</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuAdicionar">
@@ -608,6 +608,13 @@
     <addaction name="actionColocar_Elipse"/>
     <addaction name="actionApagar_Elipse"/>
    </widget>
+   <widget class="QMenu" name="menuArquivoo">
+    <property name="title">
+     <string>Arquivo</string>
+    </property>
+    <addaction name="actionSalvar"/>
+   </widget>
+   <addaction name="menuArquivoo"/>
    <addaction name="menuAdicionar"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
@@ -649,6 +656,11 @@
   <action name="actionApagar_Elipse">
    <property name="text">
     <string>Apagar Elipse</string>
+   </property>
+  </action>
+  <action name="actionSalvar">
+   <property name="text">
+    <string>Salvar</string>
    </property>
   </action>
  </widget>

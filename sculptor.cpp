@@ -55,7 +55,7 @@ Voxel Sculptor::getVoxel(int x, int y, int z) {
 }
 
 void Sculptor::putVoxel(int x, int y, int z){
-    if (x < 0 && x >= nx || y < 0 && y >= ny || z < 0 && z >= nz) {
+    if (x < 0 || x >= nx || y < 0 || y >= ny || z < 0 || z >= nz) {
         return;
     }
     v[x][y][z].isOn = true;

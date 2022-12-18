@@ -29,6 +29,7 @@ public:
     void setRaioEsfera(int raio);
     void setRaioEllipsoid(int raiox, int raioy, int raioz);
     void setPlano(int plano);
+    void writeOFF(const char* filename);
 signals:
 
 };
