@@ -30,10 +30,10 @@ void MainWindow::setDimensoes(int linhas, int colunas, int planos) {
 }
 
 void MainWindow::setColor() {
-  auto r = ui->cor_r_slider->value() / 255;
-  auto g = ui->cor_g_slider->value() / 255;
-  auto b = ui->cor_b_slider->value() / 255;
-  auto a = ui->cor_a_slider->value() / 255;
+  auto r = (double)ui->cor_r_slider->value() / 255;
+  auto g = (double)ui->cor_g_slider->value() / 255;
+  auto b = (double)ui->cor_b_slider->value() / 255;
+  auto a = (double)ui->cor_a_slider->value() / 255;
   ui->fundo->setColor(r, g, b, a);
 }
 
